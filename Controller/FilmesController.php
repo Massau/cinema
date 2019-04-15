@@ -23,4 +23,8 @@ class FilmesController extends AppController {
         $this->set('filmes', $filmes);
     }
 
+    public function add() {
+
+    }
+    
 }
