@@ -7,6 +7,8 @@ $view .= $this->Html->tag('h2', 'Idioma');
 $view .= $this->Html->para('', $this->request->data['Filme']['idioma']);
 $view .= $this->Html->tag('h2', 'Ano');
 $view .= $this->Html->para('', $this->request->data['Filme']['ano']);
+$voltarLink = $this->Html->link('Voltar', '/filmes');
 
 echo $this->Html->tag('h1', 'Visualizar Filme');
 echo $view;
+echo $voltarLink;

@@ -6,6 +6,8 @@ $form .= $this->Form->input('Filme.idioma');
 $form .= $this->Form->input('Filme.duracao');
 $form .= $this->Form->input('Filme.ano');
 $form .= $this->Form->end('Gravar');
+$voltarLink = $this->Html->link('Voltar', '/filmes');
 
 echo $this->Html->tag('h1', 'Alterar Filme');
 echo $form;
+echo $voltarLink;
