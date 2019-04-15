@@ -7,6 +7,10 @@ $form .= $this->Form->input('Filme.idioma', array(
 ));
 $form .= $this->Form->input('Filme.duracao', array('label' => array('text' => 'Duração')));
 $form .= $this->Form->input('Filme.ano', array('type' => 'text', 'maxlength' => 4));
+$form .= $this->Form->input('Filme.genero_id', array(
+    'type' => 'select',
+    'options' => $generos
+));
 $form .= $this->Form->end('Gravar');
 $voltarLink = $this->Html->link('Voltar', 'filmes');
 

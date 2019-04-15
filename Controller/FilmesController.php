@@ -31,6 +31,9 @@ class FilmesController extends AppController {
                 $this->redirect('/filmes');
             }
         }
+        $fields = array('Genero.id', 'Genero.nome');
+        $generos = $this->Filme->Genero->find('list', compact('fields'));
+        $this->set('generos', $generos);
     }
 
     public function edit($id = null) {
