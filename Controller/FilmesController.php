@@ -12,7 +12,7 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
-        $filmes = $this->Filme->find('all');
+        $filmes = array($this->Filme->find('first'));
         $this->set('filmes', $filmes);
     }
 
