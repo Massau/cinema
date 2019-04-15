@@ -26,3 +26,5 @@ INSERT INTO generos (id, nome) VALUES ('4', 'Terror');
 INSERT INTO generos (id, nome) VALUES ('5', 'Ficção');
 INSERT INTO generos (id, nome) VALUES ('6', 'Comédia');
 INSERT INTO generos (id, nome) VALUES ('7', 'Drama');
+
+ALTER TABLE filmes ADD CONSTRAINT filme_genero_fk int(11) FOREIGN KEY(genero_id) REFERENCES genero_id(id);
