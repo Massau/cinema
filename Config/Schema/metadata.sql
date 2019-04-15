@@ -11,3 +11,4 @@ INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('1', 'Avengers', '20
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('2', 'Rocky', '1980', '2:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('3', 'De Volta para o Futuro', '1986', '3:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('4', 'Esqueceram de Mim', '1994', '3:00', 'Inglês');
+INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('5', 'Star Wars', '1977', '2:00', 'Inglês');
