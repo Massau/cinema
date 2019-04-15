@@ -7,12 +7,13 @@
         $detalhe[] = array(
             $viewLink,
             $filme['Filme']['ano'],
+            $filme['Genero']['nome'],
             $editLink . ' ' . $deleteLink
         );
     }
 
    
-    $titulos = array('Nome', 'Ano', 'Editar');
+    $titulos = array('Nome', 'Ano', 'Gêneros', '');
     $header = $this->Html->tableHeaders($titulos);
     $body = $this->Html->tableCells($detalhe);
     $novoButton = $this->Html->link('Novo', '/filmes/add');

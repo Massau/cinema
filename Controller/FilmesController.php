@@ -12,7 +12,7 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
-        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano');
+        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano', 'Genero.nome');
         $order = array('Filme.ano' => 'desc');
         $group = array();
         $conditions = array(
