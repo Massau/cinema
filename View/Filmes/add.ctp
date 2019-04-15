@@ -5,4 +5,6 @@ $form .= $this->Form->input('Filme.idioma');
 $form .= $this->Form->input('Filme.duracao');
 $form .= $this->Form->input('Filme.ano');
 $form .= $this->Form->end();
+
+echo $this->Html->tag('h1', 'Novo Filme');
 echo $form;
