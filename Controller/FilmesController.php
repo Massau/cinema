@@ -15,7 +15,7 @@ class FilmesController extends AppController {
         //$fields = array('Filme.nome', 'Filme. ano');
         $order = array('Filme.ano' => 'desc');
         $group = array();
-        $conditions = array('Filme.ano' => array(1980, 2000));
+        $conditions = array('Filme.ano BETWEEN ? AND ?' => array(1980, 2000));
         $filmes = $this->Filme->find('all', compact('conditions', 'order'));
         $this->set('filmes', $filmes);
     }
