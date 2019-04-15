@@ -5,6 +5,16 @@
         array('Filme'=> array('nome' => 'De Volta para o Futuro', 'ano' => '1986', 'duracao' => '2:00', 'idioma' => 'Inglês')),
         array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
     );
+    $detalhe = array();
+    foreach ($filmes as $filme) {
+        $detalhe[] = array(
+            $filme['Filme']['nome'], 
+            $filme['Filme']['ano'], 
+            $filme['Filme']['duracao'], 
+            $filme['Filme']['idioma']
+        );
+    }
+
     echo $this->Html->tag('h1','Filmes');
     $titulos = array('Nome', 'Ano', 'Duração', 'Idioma');
     $header = $this->Html->tableHeaders($titulos);
