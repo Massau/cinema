@@ -51,4 +51,10 @@ class FilmesController extends AppController {
         $conditions = array('Filme.id' => $id);
         $this->request->data = $this->Filme->find('first', compact('fields', 'conditions'));
     }
+
+    public function delete($id) {
+        $this->Filme->delete($id);
+        $this->Flash->set('Filme excluído com sucesso');
+        $this->redirect('/filmes');
+    }
 }
