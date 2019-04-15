@@ -46,4 +46,9 @@ class FilmesController extends AppController {
         }
     }
 
+    public function view($id = null) {
+        $fields = array('Filme.id', 'Filme.nome', 'Filme.duracao', 'Filme.idioma', 'Filme.ano');
+        $conditions = array('Filme.id' => $id);
+        $this->request->data = $this->Filme->find('first', compact('fields', 'conditions'));
+    }
 }
