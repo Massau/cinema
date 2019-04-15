@@ -24,7 +24,13 @@ class FilmesController extends AppController {
     }
 
     public function add() {
-
+        if (!empty($this->request->data)) {
+            $this->Filme->create();
+            if ($this->Filme->save($this->request->data)) {
+                $this->Flash->set('Filme gravado com sucesso');
+                $this->redirect('/filmes');
+            }
+        }
     }
-    
+
 }
