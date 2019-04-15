@@ -12,7 +12,7 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
-        //$fields = array('Filme.nome', 'Filme. ano');
+        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano');
         $order = array('Filme.ano' => 'desc');
         $group = array();
         $conditions = array(
@@ -23,4 +23,38 @@ class FilmesController extends AppController {
         $this->set('filmes', $filmes);
     }
 
+    public function add() {
+        if (!empty($this->request->data)) {
+            $this->Filme->create();
+            if ($this->Filme->save($this->request->data)) {
+                $this->Flash->set('Filme gravado com sucesso');
+                $this->redirect('/filmes');
+            }
+        }
+    }
+
+    public function edit($id = null) {
+        if (!empty($this->request->data)) {
+            if ($this->Filme->save($this->request->data)) {
+                $this->Flash->set('Filme gravado com sucesso');
+                $this->redirect('/filmes');
+            }
+        } else {
+            $fields = array('Filme.id', 'Filme.nome', 'Filme.duracao', 'Filme.idioma', 'Filme.ano');
+            $conditions = array('Filme.id' => $id);
+            $this->request->data = $this->Filme->find('first', compact('fields', 'conditions'));
+        }
+    }
+
+    public function view($id = null) {
+        $fields = array('Filme.id', 'Filme.nome', 'Filme.duracao', 'Filme.idioma', 'Filme.ano');
+        $conditions = array('Filme.id' => $id);
+        $this->request->data = $this->Filme->find('first', compact('fields', 'conditions'));
+    }
+
+    public function delete($id) {
+        $this->Filme->delete($id);
+        $this->Flash->set('Filme excluído com sucesso');
+        $this->redirect('/filmes');
+    }
 }
