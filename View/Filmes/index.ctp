@@ -3,14 +3,12 @@
     foreach ($filmes as $filme) {
         $detalhe[] = array(
             $filme['Filme']['nome'], 
-            $filme['Filme']['ano'], 
-            //$filme['Filme']['duracao'], 
-            //$filme['Filme']['idioma']
+            $filme['Filme']['ano']
         );
     }
 
     echo $this->Html->tag('h1','Filmes');
-    $titulos = array('Nome', 'Ano', /* 'Duração', 'Idioma' */);
+    $titulos = array('Nome', 'Ano');
     $header = $this->Html->tableHeaders($titulos);
     $body = $this->Html->tableCells($detalhe);
 
