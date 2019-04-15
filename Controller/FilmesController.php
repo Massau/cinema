@@ -12,7 +12,8 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
-        $filmes = array($this->Filme->find('first'));
+        $order = array('Filme.nome' => 'asc');
+        $filmes = $this->Filme->find('all', compact('order'));
         $this->set('filmes', $filmes);
     }
 
