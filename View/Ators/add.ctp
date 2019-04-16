@@ -8,7 +8,8 @@ array(
 $form .= $this->Form->input('Ator.nascimento', 
 array(
     'required' => true,
-    'type' => 'date'
+    'type' => 'date',
+    'dateFormat' => 'DMY'
 ));
 $form .= $this->Form->end('Gravar');
 

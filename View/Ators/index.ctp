@@ -5,7 +5,7 @@ foreach($ators as $ator) {
     $editLink = $this->Html->link('Alterar', '/ators/edit/' . $ator['Ator']['id']);
     $detalhe[] = array(
         $ator['Ator']['nome'], 
-        $ator['Ator']['nascimento'],
+        date('d/m/Y', strtotime($ator['Ator']['nascimento'])),
         $editLink
     );
 }
