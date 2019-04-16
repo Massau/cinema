@@ -5,7 +5,11 @@ array(
     'required' => true,
     'minlength' => 3,
 ));
-$form .= $this->Form->input('Ator.nascimento', array('type' => 'date'));
+$form .= $this->Form->input('Ator.nascimento', 
+array(
+    'required' => true,
+    'type' => 'date'
+));
 $form .= $this->Form->end('Gravar');
 
 $voltarLink = $this->Html->link('Voltar', 'ators');
