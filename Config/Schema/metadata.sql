@@ -1,3 +1,41 @@
+# Estrutura da tabela "ators"
+#
+
+DROP TABLE IF EXISTS `ators`;
+CREATE TABLE `ators` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `nascimento` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Estrutura da tabela "ators_filmes"
+#
+
+DROP TABLE IF EXISTS `ators_filmes`;
+CREATE TABLE `ators_filmes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filme_id` int(11) DEFAULT NULL,
+  `ator_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Estrutura da tabela "generos"
+#
+
+DROP TABLE IF EXISTS `generos`;
+CREATE TABLE `generos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Estrutura da tabela "filmes"
+#
+
 DROP TABLE IF EXISTS `filmes`;
 CREATE TABLE `filmes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -11,17 +49,31 @@ CREATE TABLE `filmes` (
   CONSTRAINT `filme_genero_fk` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+#
+# Estrutura da tabela "criticas"
+#
+
+DROP TABLE IF EXISTS `criticas`;
+CREATE TABLE `criticas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `avaliacao` int(11) DEFAULT NULL,
+  `data_avaliacao` datetime DEFAULT NULL,
+  `filme_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `critica_filme_fk` (`filme_id`),
+  CONSTRAINT `critica_filme_fk` FOREIGN KEY (`filme_id`) REFERENCES `filmes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Insercao de dados nas tabelas
+#
+
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('1', 'Avengers', '2010', '5:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('2', 'Rocky', '1980', '2:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('3', 'De Volta para o Futuro', '1986', '3:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('4', 'Esqueceram de Mim', '1994', '3:00', 'Inglês');
 INSERT INTO filmes (id, nome, ano, duracao, idioma) VALUES ('5', 'Star Wars', '1977', '2:00', 'Inglês');
-
-CREATE TABLE `generos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO generos (id, nome) VALUES ('1', 'Aventura');
 INSERT INTO generos (id, nome) VALUES ('2', 'Ação');
