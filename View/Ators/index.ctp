@@ -2,7 +2,7 @@
 //Formata, faz tradução para formato que tableCells entenda
 $detalhe = array();
 foreach($ators as $ator) {
-    $editLink = $this->Html->Link('Alterar', '/ators/edit' . $ator['Ator']['id']);
+    $editLink = $this->Html->link('Alterar', '/ators/edit/' . $ator['Ator']['id']);
     $detalhe[] = array(
         $ator['Ator']['nome'], 
         $ator['Ator']['nascimento'],
