@@ -34,3 +34,6 @@ INSERT INTO generos (id, nome) VALUES ('7', 'Drama');
 INSERT INTO criticas (nome, avaliacao, data_avaliacao, filme_id) VALUES ('Jose', '10', '2019-04-03', '1');
 INSERT INTO criticas (nome, avaliacao, data_avaliacao, filme_id) VALUES ('Mario', '6', '2019-04-02', '1');
 INSERT INTO criticas (nome, avaliacao, data_avaliacao, filme_id) VALUES ('Claudia', '8', '2019-03-02', '1');
+
+INSERT INTO ators (nome, nascimento) VALUES ('Alex', '2019-03-02');
+INSERT INTO ators (nome, nascimento) VALUES ('Rebeka', '2019-03-02');
