@@ -28,10 +28,15 @@ class AtorsController extends AppController {
                 $this->redirect('/ators');
             }   
         } else {
-            $fields = array('Ator.id', 'Ator.nome', 'Ator.endereco');
+            $fields = array('Ator.id', 'Ator.nome', 'Ator.nascimento');
             $conditions = array('Ator.id' => $id);            
             $this->request->data = $this->Ator->find('all');
         }
     }
 
+    public function view($id = null) {
+        $fields = array('Ator.id', 'Ator.nome', 'Ator.nascimento');
+        $conditions = array('Ator.id' => $id);            
+        $this->request->data = $this->Ator->find('first', compact('fields', 'conditions'));
+    }
 }
