@@ -8,12 +8,14 @@ foreach($ators as $ator) {
     );
 }
 
-echo $this->Html->tag('h1', 'Atores');
-    
+
 $titulos = array('Nome', 'Nascimento');
 $header = $this->Html->tableHeaders($titulos);
-    
+
 //HtmlCells tem padrão para receber informação
 $body = $this->Html->tableCells($detalhe);
+$novoButton = $this->Html->link('Novo', '/ators/add');
 
+echo $this->Html->tag('h1', 'Atores');
+echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
