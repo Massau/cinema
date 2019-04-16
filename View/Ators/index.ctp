@@ -4,7 +4,7 @@ $detalhe = array();
 foreach($ators as $ator) {
     $detalhe[] = array(
         $ator['Ator']['nome'], 
-        $ator['Ator']['nascimento'],
+        $ator['Ator']['nascimento']
     );
 }
 
