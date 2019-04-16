@@ -37,3 +37,8 @@ INSERT INTO criticas (nome, avaliacao, data_avaliacao, filme_id) VALUES ('Claudi
 
 INSERT INTO ators (nome, nascimento) VALUES ('Alex', '2019-03-02');
 INSERT INTO ators (nome, nascimento) VALUES ('Rebeka', '2019-03-02');
+
+INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('1', '1', '1');
+INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('2', '2', '2');
+INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('3', '1', '2');
+INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('4', '2', '1');
