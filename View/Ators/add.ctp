@@ -9,11 +9,11 @@ $form .= $this->Form->input('Ator.nascimento',
 array(
     'required' => true,
     'type' => 'date',
-    'dateFormat' => 'DMY'
+    'dateFormat' => 'DMY',
 ));
 $form .= $this->Form->end('Gravar');
 
-$voltarLink = $this->Html->link('Voltar', 'ators');
+$voltarLink = $this->Html->link('Voltar', '/ators');
 
 echo $this->Html->tag('h1', 'novo Ator');
 echo $form;
