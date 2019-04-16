@@ -10,8 +10,8 @@ $view .= $this->Html->para('', $this->request->data['Filme']['ano']);
 $view .= $this->Html->tag('h2', 'Criticas');
 
 foreach ($this->request->data['Critica'] as $critica) {
-    $criticas = $critica['nome'] . ' - ' . $date('d/m/y', strtotime($critica['data_avaliacao'])) . ' - Avaliação: ' . $critica['avaliacao'];
-    $view .= $this->Html->tag('h2', $criticas);
+    $criticas = $critica['nome'] . ' - ' . date('d/m/Y', strtotime($critica['data_avaliacao'])) . ' - Avaliação: ' . $critica['avaliacao'];
+    $view .= $this->Html->para('', $criticas);
 }
 
 $voltarLink = $this->Html->link('Voltar', '/filmes');
