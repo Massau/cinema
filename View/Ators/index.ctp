@@ -18,7 +18,12 @@ $header = $this->Html->tableHeaders($titulos);
 //HtmlCells tem padrão para receber informação
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/ators/add');
+$CriticasIndex = $this->Html->link('Críticas', '/criticas');
+$FilmesIndex = $this->Html->link('Filmes', '/filmes');
+$GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
 echo $this->Html->tag('h1', 'Atores');
 echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
+echo $this->Html->tag('h4', 'Busque também por:');
+echo $CriticasIndex . ' ' . $FilmesIndex . ' ' . $GenerosIndex;

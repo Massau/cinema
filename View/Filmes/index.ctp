@@ -17,8 +17,11 @@ $titulos = array('Nome', 'Ano', 'Gêneros', '');
 $header = $this->Html->tableHeaders($titulos);
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/filmes/add');
+$AtorsIndex = $this->Html->link('Atores', '/ators');
+$CriticasIndex = $this->Html->link('Críticas', '/criticas');
+$GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
 echo $this->Html->tag('h1','Filmes');
 echo $novoButton;
-echo $this->Html->tag('table', $header . $body);
-?>
+echo $this->Html->tag('table', $header . $body);echo $this->Html->tag('h4', 'Busque também por:');
+echo $AtorsIndex . ' ' . $CriticasIndex . ' ' . $GenerosIndex;
