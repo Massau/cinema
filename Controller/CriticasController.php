@@ -6,7 +6,7 @@ class CriticasController extends AppController {
     public function index() {
     
         $fields = array('Critica.id', 'Critica.nome', 'Critica.nascimento');
-        $ators = $this->Ator->find('all');
+        $criticas = $this->Critica->find('all');
         $this->set('criticas', $criticas);
 
     }

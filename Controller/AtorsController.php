@@ -30,7 +30,7 @@ class AtorsController extends AppController {
         } else {
             $fields = array('Ator.id', 'Ator.nome', 'Ator.nascimento');
             $conditions = array('Ator.id' => $id);            
-            $this->request->data = $this->Ator->find('all');
+            $this->request->data = $this->Ator->find('first', compact('fields', 'conditions'));
         }
     }
 
