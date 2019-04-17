@@ -16,7 +16,21 @@ class Ator extends AppModel {
             'notBlank' => array(
                 'rule' => 'notBlank', 'message' => 'Informe a data de nascimento'
             ),
+            'date' => array(
+                /* */
+                'rule' => array('date', 'dmy'), 'message' => 'Data inválida'
+            ),
         )
     );
+
+    public function beforeSave($options = array()) {
+        if (!empty($this->data['Ator']['nascimento'])) {
+            /*STR_REPLACE: substitui onde tem barra por traço*/
+            $nascimento = str_replace('/', '-', $this->data['Ator']['nascimento']);
+            $this->data['Ator']['nascimento'] = date('Y-m-d', strtotime($nascimento));
+        }
+        
+        return true;
+    }
 
 }

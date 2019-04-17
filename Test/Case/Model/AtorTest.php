@@ -32,4 +32,14 @@ class AtorTest extends CakeTestCase {
         $this->assertFalse($saved);
     }
 
+    public function testNascimentoInvalido() {
+        $data = array('Ator' => array('nascimento' => '13-13-2019'));
+        $saved = $this->Ator->save($data);
+        $this->assertFalse($saved);
+
+        $data = array('Ator' => array('nascimento' => '2019-01-01'));
+        $saved = $this->Ator->save($data);
+        $this->assertFalse($saved);
+    }
+
 }
