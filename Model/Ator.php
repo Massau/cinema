@@ -5,13 +5,18 @@ class Ator extends AppModel {
 
     public $validate = array(
         'nome' => array(
-            'rule' => 
-                'notBlank', 'message' => 'Informe o nome',
-                'minLength' => 3
+            'notBlank' => array(
+                'rule' => 'notBlank', 'message' => 'Informe o nome'
             ),
+            'minLength' => array(
+                'rule' => array('minLength', 3), 'message' => 'Informe ao menos 3 caracteres'
+            )
+        ),
         'nascimento' => array(
-            'rule' => 
-            'notBlank', 'message' => 'Informe a data de nascimento'),
+            'notBlank' => array(
+                'rule' => 'notBlank', 'message' => 'Informe a data de nascimento'
+            ),
+        )
     );
 
 }

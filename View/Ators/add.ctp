@@ -2,8 +2,7 @@
 $form = $this->Form->create('Ator');
 $form .= $this->Form->input('Ator.nome', 
 array(
-    'required' => true,
-    'minlength' => 3,
+    'required' => false,
 ));
 $form .= $this->Form->input('Ator.nascimento', 
 array(
