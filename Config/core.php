@@ -18,7 +18,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-//setLocale(LC_ALL, 'deu');
+setLocale(LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese');
 //Configure::write('Config.language', 'deu');
 
 /**
@@ -278,7 +278,7 @@
  * Uncomment this line and correct your server timezone to fix
  * any date & time related errors.
  */
-	//date_default_timezone_set('UTC');
+date_default_timezone_set('America/Sao_Paulo');
 
 /**
  * `Config.timezone` is available in which you can set users' timezone string.

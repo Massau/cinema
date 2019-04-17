@@ -12,12 +12,12 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
-        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano');
+        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano', 'Genero.nome');
         $order = array('Filme.ano' => 'desc');
         $group = array();
         $conditions = array(
-            'Filme.ano BETWEEN ? AND ?' => array(1980, 2000),
-            'Filme.duracao !=' => '3:00'
+            'Filme.ano BETWEEN ? AND ?' => array(1980, 2018),
+            'Filme.duracao !=' => '1:30'
         );
         $filmes = $this->Filme->find('all', compact('conditions', 'order'));
         $this->set('filmes', $filmes);
@@ -31,6 +31,9 @@ class FilmesController extends AppController {
                 $this->redirect('/filmes');
             }
         }
+        $fields = array('Genero.id', 'Genero.nome');
+        $generos = $this->Filme->Genero->find('list', compact('fields'));
+        $this->set('generos', $generos);
     }
 
     public function edit($id = null) {
@@ -40,10 +43,13 @@ class FilmesController extends AppController {
                 $this->redirect('/filmes');
             }
         } else {
-            $fields = array('Filme.id', 'Filme.nome', 'Filme.duracao', 'Filme.idioma', 'Filme.ano');
+            $fields = array('Filme.id', 'Filme.nome', 'Filme.duracao', 'Filme.idioma', 'Filme.ano', 'Filme.genero_id');
             $conditions = array('Filme.id' => $id);
             $this->request->data = $this->Filme->find('first', compact('fields', 'conditions'));
         }
+        $fields = array('Genero.id', 'Genero.nome');
+        $generos = $this->Filme->Genero->find('list', compact('fields'));
+        $this->set('generos', $generos);
     }
 
     public function view($id = null) {
