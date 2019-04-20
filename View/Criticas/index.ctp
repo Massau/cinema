@@ -24,4 +24,4 @@ echo $this->Html->tag('h1', 'Criticas');
 echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
 echo $this->Html->tag('h4', 'Busque também por:');
-echo $AtorsIndex . $FilmesIndex . ' ' . $GenerosIndex;
+echo $AtorsIndex . ' ' . $FilmesIndex . ' ' . $GenerosIndex;
