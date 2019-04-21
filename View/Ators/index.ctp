@@ -22,7 +22,7 @@ $CriticasIndex = $this->Html->link('Críticas', '/criticas');
 $FilmesIndex = $this->Html->link('Filmes', '/filmes');
 $GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
-echo $this->Html->tag('h1', 'Atores');
+echo $this->Html->tag('h3', 'Atores');
 echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
 echo $this->Html->tag('h4', 'Busque também por:');

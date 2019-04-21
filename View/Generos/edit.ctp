@@ -6,6 +6,6 @@ $form .= $this->Form->end('Gravar');
 
 $voltarLink = $this->Html->link('Voltar', '/generos');
 
-echo $this->Html->tag('h1', 'Alterar Genero');
+echo $this->Html->tag('h3', 'Alterar Genero');
 echo $form;
 echo $voltarLink;

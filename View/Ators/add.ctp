@@ -13,6 +13,6 @@ $form .= $this->Form->end('Gravar');
 
 $voltarLink = $this->Html->link('Voltar', '/ators');
 
-echo $this->Html->tag('h1', 'novo Ator');
+echo $this->Html->tag('h3', 'novo Ator');
 echo $form;
 echo $voltarLink;

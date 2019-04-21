@@ -20,7 +20,7 @@ $AtorsIndex = $this->Html->link('Atores', '/ators');
 $FilmesIndex = $this->Html->link('Filmes', '/filmes');
 $GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
-echo $this->Html->tag('h1', 'Criticas');
+echo $this->Html->tag('h3', 'Criticas');
 echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
 echo $this->Html->tag('h4', 'Busque também por:');
