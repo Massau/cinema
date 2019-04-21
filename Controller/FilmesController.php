@@ -19,7 +19,7 @@ class FilmesController extends AppController {
             'Filme.ano BETWEEN ? AND ?' => array(1980, 2018),
             'Filme.duracao !=' => '1:30'
         );
-        $filmes = $this->Filme->find('all', compact('conditions', 'order'));
+        $filmes = $this->Filme->find('all', compact('fields', 'conditions', 'order'));
         $this->set('filmes', $filmes);
     }
 
