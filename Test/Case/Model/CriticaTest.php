@@ -12,4 +12,11 @@ class CriticaTest extends CakeTestCase {
     public function testExisteModel() {
         $this->assertTrue(is_a($this->Critica, 'Critica'));
     }
+
+    public function testNomeEmpty() {
+        $data = array('Critica' => array('nome' => null));
+        $saved = $this->Critica->save($data);
+        $this->assertFalse($saved);
+    }
+
 }
