@@ -39,4 +39,10 @@ class GenerosController extends AppController {
         $conditions = array('Genero.id' => $id);            
         $this->request->data = $this->Genero->find('first', compact('fields', 'conditions'));
     }
+
+    public function delete($id) {
+        $this->Genero->delete($id);
+        $this->Flash->set('Genero excluído com sucesso');
+        $this->redirect('/generos');
+    }
 }

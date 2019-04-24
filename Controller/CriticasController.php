@@ -15,7 +15,7 @@ class CriticasController extends AppController {
         if(!empty($this->request->data)) {
             $this->Critica->create();
             if ($this->Critica->save($this->request->data)) {
-                $this->Flash->set('Critica gravado com sucesso');
+                $this->Flash->set('Critica gravada com sucesso');
                 $this->redirect('/criticas');
             }
         }
@@ -38,5 +38,11 @@ class CriticasController extends AppController {
         $fields = array('Critica.id', 'Critica.nome', 'Critica.nascimento');
         $conditions = array('Critica.id' => $id);            
         $this->request->data = $this->Critica->find('first', compact('fields', 'conditions'));
+    }
+
+    public function delete($id) {
+        $this->Critica->delete($id);
+        $this->Flash->set('Critica excluída com sucesso');
+        $this->redirect('/criticas');
     }
 }

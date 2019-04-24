@@ -2,16 +2,17 @@
 $detalhe = array();
 foreach($criticas as $critica) {
     $editLink = $this->Html->link('Alterar', '/criticas/edit/' . $critica['Critica']['id']);
+    $deleteLink = $this->Html->link('Excluir', '/criticas/delete/' . $critica['Critica']['id']);
     $viewLink = $this->Html->link($critica['Critica']['nome'], '/criticas/view/' . $critica['Critica']['id']);
     $detalhe[] = array(
         $viewLink,
         $critica['Critica']['nome'],
         $critica['Critica']['avaliacao'],
-        $editLink
+        $editLink. ' ' . $deleteLink
     );
 }
 
-$titulos = array('Filme', 'Nome', 'Avaliação', 'Data',  '');
+$titulos = array('Filme', 'Nome', 'Avaliação', '');
 $header = $this->Html->tableHeaders($titulos);
 
 $body = $this->Html->tableCells($detalhe);

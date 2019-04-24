@@ -2,10 +2,11 @@
 $detalhe = array();
 foreach($generos as $genero) {
     $editLink = $this->Html->link('Alterar', '/generos/edit/' . $genero['Genero']['id']);
+    $deleteLink = $this->Html->link('Excluir', '/generos/delete/' . $genero['Genero']['id']);
     $viewLink = $this->Html->link($genero['Genero']['nome'], '/generos/view/' . $genero['Genero']['id']);
     $detalhe[] = array(
         $viewLink,
-        $editLink
+        $editLink . ' ' . $deleteLink
     );
 }
 

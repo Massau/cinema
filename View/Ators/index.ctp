@@ -3,11 +3,12 @@
 $detalhe = array();
 foreach($ators as $ator) {
     $editLink = $this->Html->link('Alterar', '/ators/edit/' . $ator['Ator']['id']);
+    $deleteLink = $this->Html->link('Excluir', '/ators/delete/' . $ator['Ator']['id']);
     $viewLink = $this->Html->link($ator['Ator']['nome'], '/ators/view/' . $ator['Ator']['id']);
     $detalhe[] = array(
         $viewLink,
         date('d/m/Y', strtotime($ator['Ator']['nascimento'])),
-        $editLink
+        $editLink . ' ' . $deleteLink
     );
 }
 

@@ -4,11 +4,6 @@ $form .= $this->Form->input('Critica.nome',
 array(
     'required' => false,
 ));
-$form .= $this->Form->input('Critica.filme_id', 
-array(
-    'type' => 'select',
-    'options' => $filmes
-));
 $form .= $this->Form->input('Critica.avaliacao', array(
     'type' => 'select',
     'options' => array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5')    

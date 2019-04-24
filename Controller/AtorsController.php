@@ -39,4 +39,11 @@ class AtorsController extends AppController {
         $conditions = array('Ator.id' => $id);            
         $this->request->data = $this->Ator->find('first', compact('fields', 'conditions'));
     }
+
+    public function delete($id) {
+        $this->Ator->delete($id);
+        $this->Flash->set('Ator excluído com sucesso');
+        $this->redirect('/ators');
+    }
+
 }
