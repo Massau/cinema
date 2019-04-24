@@ -19,4 +19,16 @@ class CriticaTest extends CakeTestCase {
         $this->assertFalse($saved);
     }
 
+    public function testMinLength() {
+        $data = array('Critica' => array('nome' => 'ABC'));
+        $saved = $this->Ator->save($data);
+        $this->assertFalse($saved);
+    }
+
+    public function testMaxLength() {
+        $data = array('Critica' => array('nome' => 'ABCDE'));
+        $saved = $this->Ator->save($data);
+        $this->assertFalse($saved);
+    }
+
 }
