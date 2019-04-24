@@ -18,6 +18,6 @@ $form .= $this->Form->end('Gravar');
 
 $voltarLink = $this->Html->link('Voltar', '/criticas');
 
-echo $this->Html->tag('h3', 'Nova Critica');
+echo $this->Html->tag('h3', 'Alterar Critica');
 echo $form;
 echo $voltarLink;
