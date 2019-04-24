@@ -13,7 +13,7 @@ $form .= $this->Form->input('Critica.avaliacao', array(
     'type' => 'select',
     'options' => array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5')    
 ));
-$form .= $this->Form->dateTime('Critica.data_avaliacao',
+$form .= $this->Form->input('Critica.data_avaliacao',
     array(
     'required' => false,
     'type' => 'text',
