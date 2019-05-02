@@ -3,12 +3,20 @@ App::uses('AppController', 'Controller');
 
 class GenerosController extends AppController {
     
+    public $paginate = array(
+        'fields' => array('Genero.id', 'Genero.nome'),
+        'conditions' => array(),
+        'limit' => 6,
+        'order' => array('Genero.nome' => 'desc')
+    );
+
     public function index() {
-    
+        /*
         $fields = array('Genero.id', 'Genero.nome');
         $generos = $this->Genero->find('all');
+        */
+        $generos = $this->paginate();
         $this->set('generos', $generos);
-
     }
 
     public function add() {

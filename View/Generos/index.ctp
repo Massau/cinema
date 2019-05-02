@@ -19,8 +19,17 @@ $AtorsIndex = $this->Html->link('Atores', '/ators');
 $CriticasIndex = $this->Html->link('Críticas', '/criticas');
 $FilmesIndex = $this->Html->link('Filmes', '/filmes');
 
+$paginate = '';
+$paginate .= $this->Paginator->first()  . '  ';
+$paginate .= $this->Paginator->prev()  . '  ';
+$paginate .= $this->Paginator->next()  . '  ';
+$paginate .= $this->Paginator->last()  . '  ';
+$paginate = $this->Paginator->Html->para('', $paginate);
+
 echo $this->Html->tag('h3', 'Generos');
 echo $novoButton;
 echo $this->Html->tag('table', $header . $body);
+echo $paginate . '<br>';
+
 echo $this->Html->tag('h4', 'Busque também por:');
 echo $AtorsIndex . ' ' . $CriticasIndex . ' ' . $FilmesIndex;
