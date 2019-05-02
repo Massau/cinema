@@ -10,13 +10,12 @@ foreach($criticas as $critica) {
     $viewLink = $this->Html->link($critica['Critica']['nome'], '/criticas/view/' . $critica['Critica']['id']);
     $detalhe[] = array(
         $viewLink,
-        $critica['Critica']['nome'],
         $critica['Critica']['avaliacao'],
         $editLink. ' ' . $deleteLink
     );
 }
 
-$titulos = array('Filme', 'Nome', 'Avaliação', '');
+$titulos = array('Nome', 'Avaliação', '');
 $header = $this->Html->tableHeaders($titulos);
 
 $body = $this->Html->tableCells($detalhe);
