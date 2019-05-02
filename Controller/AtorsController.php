@@ -3,12 +3,21 @@ App::uses('AppController', 'Controller');
 
 class AtorsController extends AppController {
     
-    public function index() {
-    
+    public $paginate = array(
+        'fields' => array('Ator.id', 'Ator.nome', 'Ator.nascimento'),
+        'conditions' => array(),
+        'limit' => 10,
+        'order' => array('Ator.nome' => 'asc')
+    );
+
+    public function index() {  
+        /*
         $fields = array('Ator.id', 'Ator.nome', 'Ator.nascimento');
         $ators = $this->Ator->find('all');
         $this->set('ators', $ators);
-
+        */
+        $ators = $this->paginate();
+        $this->set('ators', $ators);
     }
 
     public function add() {
