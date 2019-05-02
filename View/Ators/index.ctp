@@ -30,7 +30,7 @@ $paginate .= $this->Paginator->next() . '  ';
 $paginate .= $this->Paginator->last() . '  ';
 $paginate .= $this->Paginator->link('5 por página', array('controller' => 'ators', 'action' => 'index', 'limit' => 5)) . '  ';
 $paginate .= $this->Paginator->link('10 por página', array('controller' => 'ators', 'action' => 'index', 'limit' => 10)) . '  ';
-$paginate .= $this->Html->para('', $paginate);
+$paginate = $this->Html->para('', $paginate);
 
 echo $this->Html->tag('h3', 'Atores');
 echo $novoButton;
