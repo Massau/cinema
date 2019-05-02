@@ -3,6 +3,13 @@ App::uses('AppController', 'Controller');
 
 class FilmesController extends AppController {
     
+    public $paginate = array(
+        'fields' => array('Filme.id', 'Filme.nome', 'Filme.ano', 'Genero.nome'),
+        'conditions' => array(),
+        'limit' => 10,
+        'order' => array('Filme.nome' => 'asc')
+    );
+
     public function index() {
     /*    
         $filmes = array(
@@ -12,6 +19,7 @@ class FilmesController extends AppController {
             array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
         );
     */
+    /*
         $fields = array('Filme.id', 'Filme.nome', 'Filme.ano', 'Genero.nome');
         $order = array('Filme.ano' => 'desc');
         $group = array();
@@ -20,6 +28,8 @@ class FilmesController extends AppController {
             'Filme.duracao !=' => '1:30'
         );
         $filmes = $this->Filme->find('all', compact('fields', 'conditions', 'order'));
+    */
+        $filmes = $this->paginate();
         $this->set('filmes', $filmes);
     }
 
