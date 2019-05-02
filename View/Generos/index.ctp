@@ -28,6 +28,8 @@ $paginate .= $this->Paginator->first()  . '  ';
 $paginate .= $this->Paginator->prev()  . '  ';
 $paginate .= $this->Paginator->next()  . '  ';
 $paginate .= $this->Paginator->last()  . '  ';
+$paginate .= $this->Paginator->link('5 por página', array('controller' => 'criticas', 'action' => 'index', 'limit' => 5)) . '  ';
+$paginate .= $this->Paginator->link('10 por página', array('controller' => 'criticas', 'action' => 'index', 'limit' => 10)) . '  ';
 $paginate = $this->Paginator->Html->para('', $paginate);
 
 echo $this->Html->tag('h3', 'Generos');
