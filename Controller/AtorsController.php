@@ -16,6 +16,10 @@ class AtorsController extends AppController {
         $ators = $this->Ator->find('all');
         $this->set('ators', $ators);
         */
+        if (!empty($this->request->data['Ator'])) {
+            $this->paginate['conditions']['Ator.nome'] = $this->request->data['Ator']['nome'];
+        }
+
         $ators = $this->paginate();
         $this->set('ators', $ators);
     }
