@@ -1,4 +1,8 @@
 <?php
+$filtro = $this->Form->create('Ator');
+$filtro .= $this->Form->input('Ator.nome');
+$filtro .= $this->Form->end('Filtrar');
+
 //Formata, faz tradução para formato que tableCells entenda
 $detalhe = array();
 foreach($ators as $ator) {
@@ -34,6 +38,7 @@ $paginate = $this->Html->para('', $paginate);
 
 echo $this->Html->tag('h3', 'Atores');
 echo $novoButton;
+echo $filtro;
 echo $this->Html->tag('table', $header . $body);
 echo $paginate . '<br>';
 
