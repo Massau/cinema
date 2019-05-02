@@ -17,7 +17,7 @@ class AtorsController extends AppController {
         $this->set('ators', $ators);
         */
         if ($this->request->is('post') && !empty($this->request->data['Ator']['nome'])) {
-            $this->paginate['conditions']['Ator.nome'] = $this->request->data['Ator']['nome'];
+            $this->paginate['conditions']['Ator.nome LIKE'] = '%' . trim($this->request->data['Ator']['nome'] . '%');
         }
 
         $ators = $this->paginate();
