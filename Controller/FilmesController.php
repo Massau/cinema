@@ -11,24 +11,18 @@ class FilmesController extends AppController {
     );
 
     public function index() {
-    /*    
-        $filmes = array(
-            array('Filme'=> array('nome' => 'Avengers', 'ano' => '2019', 'duracao' => '5:00', 'idioma' => 'Inglês')),
-            array('Filme'=> array('nome' => 'Rocky', 'ano' => '1979', 'duracao' => '3:00', 'idioma' => 'Inglês')),
-            array('Filme'=> array('nome' => 'De Volta para o Futuro', 'ano' => '1986', 'duracao' => '2:00', 'idioma' => 'Inglês')),
-            array('Filme'=> array('nome' => 'Esqueceram de Mim', 'ano' => '1994', 'duracao' => '5:00', 'idioma' => 'Inglês')),
-        );
+    /* NÃO DEU CERTO, JOACIR :(
+        if ($this->request->is('post') && !empty($this->request->data['Filme']['nome'])) {
+            $this->paginate['conditions'] = array("OR" => array(
+                ['Filme.nome LIKE'] = trim($this->request->data['Filme']['nome'] . '%'),
+                ['Filme.ano'] = trim($this->request->data['Filme']['ano'])
+            ))
+        }
     */
-    /*
-        $fields = array('Filme.id', 'Filme.nome', 'Filme.ano', 'Genero.nome');
-        $order = array('Filme.ano' => 'desc');
-        $group = array();
-        $conditions = array(
-            'Filme.ano BETWEEN ? AND ?' => array(1980, 2018),
-            'Filme.duracao !=' => '1:30'
-        );
-        $filmes = $this->Filme->find('all', compact('fields', 'conditions', 'order'));
-    */
+        if ($this->request->is('post') && !empty($this->request->data['Filme']['nome'])) {
+            $this->paginate['conditions']
+            ['Filme.nome'] = trim($this->request->data['Filme']['nome']);
+        }
         $filmes = $this->paginate();
         $this->set('filmes', $filmes);
     }

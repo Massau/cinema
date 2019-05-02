@@ -1,4 +1,9 @@
 <?php
+$filtro = $this->Form->create('Filme');
+$filtro .= $this->Form->input('Filme.nome', array('required' => false));
+$filtro .= $this->Form->input('Filme.ano');
+$filtro .= $this->Form->end('Filtrar');
+
 $detalhe = array();
 foreach ($filmes as $filme) {
     $editLink = $this->Html->link('Alterar', '/filmes/edit/' . $filme['Filme']['id']);
@@ -30,6 +35,7 @@ $paginate = $this->Html->para('', $paginate);
 
 echo $this->Html->tag('h3','Filmes');
 echo $novoButton;
+echo $filtro;
 echo $this->Html->tag('table', $header . $body);
 echo $paginate . '<br>';
 
