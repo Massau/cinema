@@ -1,4 +1,8 @@
 <?php
+$filtro = $this->Form->create('Genero');
+$filtro .= $this->Form->input('Genero.nome', array('required' => false));
+$filtro .= $this->Form->End('Filtrar');
+
 $detalhe = array();
 foreach($generos as $genero) {
     $editLink = $this->Html->link('Alterar', '/generos/edit/' . $genero['Genero']['id']);
@@ -28,6 +32,7 @@ $paginate = $this->Paginator->Html->para('', $paginate);
 
 echo $this->Html->tag('h3', 'Generos');
 echo $novoButton;
+echo $filtro;
 echo $this->Html->tag('table', $header . $body);
 echo $paginate . '<br>';
 

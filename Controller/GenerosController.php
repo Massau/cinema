@@ -15,6 +15,10 @@ class GenerosController extends AppController {
         $fields = array('Genero.id', 'Genero.nome');
         $generos = $this->Genero->find('all');
         */
+        if ($this->request->is('post') && !empty($this->request->data['Genero']['nome'])) {
+            $this->paginate['conditions']['Genero.nome'] = trim($this->request->data['Genero']['nome']);
+        }
+
         $generos = $this->paginate();
         $this->set('generos', $generos);
     }
