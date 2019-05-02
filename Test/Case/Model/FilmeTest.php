@@ -15,4 +15,11 @@ class FilmeTest extends CakeTestCase {
         $saved = $filme->save($data);
         $this->assertFalse($saved);
     }
+
+    public function testDuracaoEmpty() {
+        $data = array('Filme' => array('duracao' => null));
+        $saved = $this->Filme->save($data);
+        $this->assertFalse($saved);
+    }
+    
 }

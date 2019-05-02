@@ -3,12 +3,25 @@ App::uses('AppController', 'Controller');
 
 class AtorsController extends AppController {
     
-    public function index() {
-    
+    public $paginate = array(
+        'fields' => array('Ator.id', 'Ator.nome', 'Ator.nascimento'),
+        'conditions' => array(),
+        'limit' => 10,
+        'order' => array('Ator.nome' => 'asc')
+    );
+
+    public function index() {  
+        /*
         $fields = array('Ator.id', 'Ator.nome', 'Ator.nascimento');
         $ators = $this->Ator->find('all');
         $this->set('ators', $ators);
+        */
+        if ($this->request->is('post') && !empty($this->request->data['Ator']['nome'])) {
+            $this->paginate['conditions']['Ator.nome LIKE'] = '%' . trim($this->request->data['Ator']['nome'] . '%');
+        }
 
+        $ators = $this->paginate();
+        $this->set('ators', $ators);
     }
 
     public function add() {
@@ -39,4 +52,11 @@ class AtorsController extends AppController {
         $conditions = array('Ator.id' => $id);            
         $this->request->data = $this->Ator->find('first', compact('fields', 'conditions'));
     }
+
+    public function delete($id) {
+        $this->Ator->delete($id);
+        $this->Flash->set('Ator excluído com sucesso');
+        $this->redirect('/ators');
+    }
+
 }

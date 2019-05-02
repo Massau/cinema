@@ -22,6 +22,6 @@ foreach ($this->request->data['Ator'] as $ator) {
 
 $voltarLink = $this->Html->link('Voltar', '/filmes');
 
-echo $this->Html->tag('h1', 'Visualizar Filme');
+echo $this->Html->tag('h3', 'Visualizar Filme');
 echo $view;
 echo $voltarLink;

@@ -5,6 +5,6 @@ $view = $this->Html->tag('h2', 'Nascimento');
 $view .= $this->Html->para('', $this->request->data['Ator']['nascimento']);
 $voltarLink = $this->Html->link('Voltar', '/ators');
 
-echo $this->Html->tag('h1', 'Visualizar Ator');
+echo $this->Html->tag('h3', 'Visualizar Ator');
 echo $view;
 echo $voltarLink;

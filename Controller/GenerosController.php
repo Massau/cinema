@@ -3,12 +3,24 @@ App::uses('AppController', 'Controller');
 
 class GenerosController extends AppController {
     
+    public $paginate = array(
+        'fields' => array('Genero.id', 'Genero.nome'),
+        'conditions' => array(),
+        'limit' => 6,
+        'order' => array('Genero.nome' => 'desc')
+    );
+
     public function index() {
-    
+        /*
         $fields = array('Genero.id', 'Genero.nome');
         $generos = $this->Genero->find('all');
-        $this->set('generos', $generos);
+        */
+        if ($this->request->is('post') && !empty($this->request->data['Genero']['nome'])) {
+            $this->paginate['conditions']['Genero.nome'] = trim($this->request->data['Genero']['nome']);
+        }
 
+        $generos = $this->paginate();
+        $this->set('generos', $generos);
     }
 
     public function add() {
@@ -38,5 +50,11 @@ class GenerosController extends AppController {
         $fields = array('Genero.id', 'Genero.nome');
         $conditions = array('Genero.id' => $id);            
         $this->request->data = $this->Genero->find('first', compact('fields', 'conditions'));
+    }
+
+    public function delete($id) {
+        $this->Genero->delete($id);
+        $this->Flash->set('Genero excluído com sucesso');
+        $this->redirect('/generos');
     }
 }

@@ -13,8 +13,8 @@ CREATE TABLE `ators` (
 # Estrutura da tabela "ators_filmes"
 #
 
-DROP TABLE IF EXISTS `ators_filmes`;
-CREATE TABLE `ators_filmes` (
+DROP TABLE IF EXISTS `filmes_ators`; /*Alterei o nome da tabela para filmes_ators*/
+CREATE TABLE `filmes_ators` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `filme_id` int(11) DEFAULT NULL,
   `ator_id` int(11) DEFAULT NULL,
@@ -90,7 +90,7 @@ INSERT INTO criticas (nome, avaliacao, data_avaliacao, filme_id) VALUES ('Claudi
 INSERT INTO ators (nome, nascimento) VALUES ('Alex', '2019-03-02');
 INSERT INTO ators (nome, nascimento) VALUES ('Rebeka', '2019-03-02');
 
-INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('1', '1', '1');
-INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('2', '2', '2');
-INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('3', '1', '2');
-INSERT INTO ators_filmes (id, filme_id, ator_id) VALUES ('4', '2', '1');
+INSERT INTO filmes_ators (id, filme_id, ator_id) VALUES ('1', '1', '1'); /*Alterei o nome da tabela para filmes_ators*/
+INSERT INTO filmes_ators (id, filme_id, ator_id) VALUES ('2', '2', '2'); /*Antes estava ators_filmes*/
+INSERT INTO filmes_ators (id, filme_id, ator_id) VALUES ('3', '1', '2');
+INSERT INTO filmes_ators (id, filme_id, ator_id) VALUES ('4', '2', '1');
