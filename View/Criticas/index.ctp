@@ -1,4 +1,8 @@
 <?php
+$filtro = $this->Form->create('Critica');
+$filtro .= $this->Form->input('Critica.nome', array('required' => false));
+$filtro .= $this->Form->end('Filtrar');
+
 $detalhe = array();
 foreach($criticas as $critica) {
     $editLink = $this->Html->link('Alterar', '/criticas/edit/' . $critica['Critica']['id']);
@@ -32,7 +36,9 @@ $paginate = $this->Html->para('', $paginate);
 
 echo $this->Html->tag('h3', 'Criticas');
 echo $novoButton;
+echo $filtro;
 echo $this->Html->tag('table', $header . $body);
 echo $paginate;
+
 echo $this->Html->tag('h4', 'Busque também por:');
 echo $AtorsIndex . ' ' . $FilmesIndex . ' ' . $GenerosIndex;

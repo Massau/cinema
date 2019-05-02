@@ -16,7 +16,7 @@ class CriticasController extends AppController {
         $fields = array('Critica.id', 'Critica.nome', 'Critica.nascimento');
         $criticas = $this->Critica->find('all');
         */
-        if ($this->request->is('post') && !empty($this->request->data['Ator']['nome'])) {
+        if ($this->request->is('post') && !empty($this->request->data['Critica']['nome'])) {
             $this->paginate['conditions']['Critica.nome'] = trim($this->request->data['Critica']['nome']);
         }
         $criticas = $this->paginate();
