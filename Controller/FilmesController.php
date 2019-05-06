@@ -11,17 +11,12 @@ class FilmesController extends AppController {
     );
 
     public function index() {
-    /* NÃO DEU CERTO, JOACIR :(
+
         if ($this->request->is('post') && !empty($this->request->data['Filme']['nome'])) {
-            $this->paginate['conditions'] = array("OR" => array(
-                ['Filme.nome LIKE'] = trim($this->request->data['Filme']['nome'] . '%'),
-                ['Filme.ano'] = trim($this->request->data['Filme']['ano'])
-            ))
+            $this->paginate['conditions']['Filme.nome'] = trim($this->request->data['Filme']['nome']);
         }
-    */
-        if ($this->request->is('post') && !empty($this->request->data['Filme']['nome'])) {
-            $this->paginate['conditions']
-            ['Filme.nome'] = trim($this->request->data['Filme']['nome']);
+        if ($this->request->is('post') && !empty($this->request->data['Filme']['ano'])) {
+            $this->paginate['conditions']['Filme.ano'] = trim($this->request->data['Filme']['ano']);
         }
         $filmes = $this->paginate();
         $this->set('filmes', $filmes);
