@@ -48,6 +48,13 @@ $links = array(
 );
 $paginate = $this->Html->nestedList($links, array('class' => 'pagination'), array('class' => 'page-item'));
 $paginate = $this->Html->tag('nav', $paginate);
+$paginateCount = $this->Paginator->counter(
+    'Página {:page} de {:pages}. Mostrando {:current} registros de {:count}. Começo {:start}, até {:end}'
+);
+$paginateBar = $this->Html->div('row',
+    $this->Html->div('col-md-6', $paginate) .
+    $this->Html->div('col-md-6', $paginateCount)
+);
 /*
 $paginate .= $this->Paginator->first() . '  ';
 $paginate .= $this->Paginator->prev() . '  ';
@@ -60,7 +67,4 @@ $paginate = $this->Html->para('', $paginate);
 echo $this->Html->tag('h3', 'Atores');
 echo $filtroBar;
 echo $this->Html->tag('table', $header . $body, array('class' => 'table'));
-echo $paginate . '<br>';
-
-echo $this->Html->tag('h4', 'Busque também por:');
-echo $CriticasIndex . ' ' . $FilmesIndex . ' ' . $GenerosIndex;
+echo $paginateBar;
