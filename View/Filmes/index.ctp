@@ -38,7 +38,7 @@ $paginate = $this->Html->para('', $paginate);
 echo $this->Html->tag('h3','Filmes');
 echo $novoButton;
 echo $filtro;
-echo $this->Html->tag('table', $header . $body);
+echo $this->Html->tag('table', $header . $body, array('class' => 'table'));
 echo $paginate . '<br>';
 
 echo $this->Html->tag('h4', 'Busque também por:');
