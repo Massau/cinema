@@ -18,7 +18,7 @@ foreach($ators as $ator) {
 
 
 $titulos = array('Nome', 'Nascimento', '');
-$header = $this->Html->tableHeaders($titulos);
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
 
 //HtmlCells tem padrão para receber informação
 $body = $this->Html->tableCells($detalhe);
