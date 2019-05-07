@@ -3,6 +3,8 @@ App::uses('AppController', 'Controller');
 
 class CriticasController extends AppController {
     
+    public $layout = 'bootstrap';
+    
     public $paginate = array(
         'fields' => array('Critica.id', 'Filme.nome', 'Critica.nome', 'Critica.avaliacao'),
         'conditions' => array(),
