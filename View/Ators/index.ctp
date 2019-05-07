@@ -1,7 +1,14 @@
 <?php
-$filtro = $this->Form->create('Ator');
-$filtro .= $this->Form->input('Ator.nome', array('required' => false));
-$filtro .= $this->Form->end('Filtrar');
+$filtro = $this->Form->create('Ator', array('class' => 'form-inline'));
+$filtro .= $this->Form->input('Ator.nome', array(
+    'required' => false,
+    'label' => array('text' => 'Nome', 'class' => 'sr-only'),
+    'class' => 'form-control mb-2 mr-sm-2',
+    'div' => false,
+    'placeholder' => 'Nome'
+));
+$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-primary mb-2'));
+$filtro .= $this->Form->end();
 
 //Formata, faz tradução para formato que tableCells entenda
 $detalhe = array();
