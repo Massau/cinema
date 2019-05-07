@@ -16,7 +16,7 @@ foreach($criticas as $critica) {
 }
 
 $titulos = array('Nome', 'Avaliação', '');
-$header = $this->Html->tableHeaders($titulos);
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
 
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/criticas/add');

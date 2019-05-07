@@ -19,7 +19,7 @@ foreach ($filmes as $filme) {
 
    
 $titulos = array('Nome', 'Ano', 'Gêneros', '');
-$header = $this->Html->tableHeaders($titulos);
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/filmes/add');
 $AtorsIndex = $this->Html->link('Atores', '/ators');
