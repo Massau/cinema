@@ -3,6 +3,8 @@ App::uses('AppController', 'Controller');
 
 class AtorsController extends AppController {
     
+    public $layout = 'bootstrap';
+    
     public $paginate = array(
         'fields' => array('Ator.id', 'Ator.nome', 'Ator.nascimento'),
         'conditions' => array(),
