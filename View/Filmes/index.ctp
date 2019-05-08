@@ -15,7 +15,7 @@ $filtro .= $this->Form->input('Filme.ano', array(
     'div' => true,
     'placeholder' => 'Ano'
 ));
-$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-outline-warning'));
+$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-outline-warning mb-2'));
 $filtro .= $this->Form->end();
 
 $filtroBar = $this->Html->div('row my-3',

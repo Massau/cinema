@@ -9,7 +9,7 @@ $filtro .= $this->Form->input('Ator.nome', array(
     'div' => false,
     'placeholder' => 'Nome'
 ));
-$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-primary mb-2'));
+$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-outline-warning mb-2'));
 $filtro .= $this->Form->end();
 
 $filtroBar = $this->Html->div('row my-3',
