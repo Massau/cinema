@@ -36,7 +36,7 @@
 			</ul>
 		</div>
 	</nav>
-<main role="main" class="container">
+<main role="main" class="container" id="content">
 	<?php 
 		echo $this->Flash->render();
 		echo $this->fetch('content'); 
