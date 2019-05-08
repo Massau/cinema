@@ -1,7 +1,19 @@
 <?php
-$filtro = $this->Form->create('Filme');
-$filtro .= $this->Form->input('Filme.nome', array('required' => false));
-$filtro .= $this->Form->input('Filme.ano');
+$filtro = $this->Form->create('Filme', array('class' => 'form-row'));
+$filtro .= $this->Form->input('Filme.nome', array(
+    'required' => false,
+    'label' => array('text' => 'Nome', 'class' => 'sr-only'),
+    'class' => 'form-control mb-2 mr-sm-2',
+    'div' => true,
+    'placeholder' => 'Nome'
+));
+$filtro .= $this->Form->input('Filme.ano', array(
+    'required' => false,
+    'label' => array('text' => 'Nome', 'class' => 'sr-only mx-5'),
+    'class' => 'form-control mb-2 mr-sm-2',
+    'div' => true,
+    'placeholder' => 'Ano'
+));
 $filtro .= $this->Form->end('Filtrar');
 
 $detalhe = array();
@@ -19,7 +31,7 @@ foreach ($filmes as $filme) {
 
    
 $titulos = array('Nome', 'Ano', 'Gêneros', '');
-$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos), array('class' => 'thead-light'));
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/filmes/add');
 $AtorsIndex = $this->Html->link('Atores', '/ators');

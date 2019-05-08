@@ -1,6 +1,12 @@
 <?php
-$filtro = $this->Form->create('Critica');
-$filtro .= $this->Form->input('Critica.nome', array('required' => false));
+$filtro = $this->Form->create('Critica', array('class' => 'form-inline'));
+$filtro .= $this->Form->input('Critica.nome', array(
+    'required' => false,
+    'label' => array('text' => 'Nome', 'class' => 'sr-only'),
+    'class' => 'form-control mb-2 mr-sm-2',
+    'div' => false,
+    'placeholder' => 'Nome'
+));
 $filtro .= $this->Form->end('Filtrar');
 
 $detalhe = array();
@@ -16,7 +22,7 @@ foreach($criticas as $critica) {
 }
 
 $titulos = array('Nome', 'Avaliação', '');
-$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos), array('class' => 'thead-light'));
 
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/criticas/add');

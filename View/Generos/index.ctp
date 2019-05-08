@@ -1,6 +1,12 @@
 <?php
-$filtro = $this->Form->create('Genero');
-$filtro .= $this->Form->input('Genero.nome', array('required' => false));
+$filtro = $this->Form->create('Genero', array('class' => 'form-inline'));
+$filtro .= $this->Form->input('Genero.nome', array(
+    'required' => false,
+    'label' => array('text' => 'Nome', 'class' => 'sr-only'),
+    'class' => 'form-control mb-2 mr-sm-2',
+    'div' => false,
+    'placeholder' => 'Nome'
+));
 $filtro .= $this->Form->End('Filtrar');
 
 $detalhe = array();
@@ -15,7 +21,7 @@ foreach($generos as $genero) {
 }
 
 $titulos = array('Nome', '');
-$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos), array('class' => 'thead-light'));
 
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/generos/add');
