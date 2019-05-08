@@ -15,7 +15,7 @@ foreach($generos as $genero) {
 }
 
 $titulos = array('Nome', '');
-$header = $this->Html->tableHeaders($titulos);
+$header = $this->Html->tag('thead', $this->Html->tableHeaders($titulos));
 
 $body = $this->Html->tableCells($detalhe);
 $novoButton = $this->Html->link('Novo', '/generos/add');
@@ -35,8 +35,5 @@ $paginate = $this->Paginator->Html->para('', $paginate);
 echo $this->Html->tag('h3', 'Generos');
 echo $novoButton;
 echo $filtro;
-echo $this->Html->tag('table', $header . $body, array('class' => 'table'));
+echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginate . '<br>';
-
-echo $this->Html->tag('h4', 'Busque também por:');
-echo $AtorsIndex . ' ' . $CriticasIndex . ' ' . $FilmesIndex;

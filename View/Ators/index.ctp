@@ -66,5 +66,5 @@ $paginate = $this->Html->para('', $paginate);
 */
 echo $this->Html->tag('h3', 'Atores');
 echo $filtroBar;
-echo $this->Html->tag('table', $header . $body, array('class' => 'table'));
+echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginateBar;

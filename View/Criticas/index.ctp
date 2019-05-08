@@ -36,8 +36,5 @@ $paginate = $this->Html->para('', $paginate);
 echo $this->Html->tag('h3', 'Criticas');
 echo $novoButton;
 echo $filtro;
-echo $this->Html->tag('table', $header . $body, array('class' => 'table'));
+echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginate;
-
-echo $this->Html->tag('h4', 'Busque também por:');
-echo $AtorsIndex . ' ' . $FilmesIndex . ' ' . $GenerosIndex;
