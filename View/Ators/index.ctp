@@ -1,5 +1,5 @@
 <?php
-$novoButton = $this->Html->link('Novo', '/ators/add', array('class' => 'btn btn-success float-right'));
+$novoButton = $this->Js->link('Novo', '/ators/add', array('class' => 'btn btn-success float-right', 'update' => '#content'));
 
 $filtro = $this->Form->create('Ator', array('class' => 'form-inline'));
 $filtro .= $this->Form->input('Ator.nome', array(
