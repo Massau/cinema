@@ -1,5 +1,5 @@
 <?php
-$novoButton = $this->Html->link('Novo', '/criticas/add', array('class' => 'btn btn-success float-right'));
+$novoButton = $this->Js->link('Novo', '/criticas/add', array('class' => 'btn btn-success float-right', 'update' => '#content'));
 $filtro = $this->Form->create('Critica', array('class' => 'form-inline'));
 $filtro .= $this->Form->input('Critica.nome', array(
     'required' => false,

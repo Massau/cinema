@@ -1,5 +1,5 @@
 <?php
-$novoButton = $this->Html->link('Novo', '/filmes/add', array('class' => 'btn btn-success float-right'));
+$novoButton = $this->Js->link('Novo', '/filmes/add', array('class' => 'btn btn-success float-right', 'update' => '#content'));
 $filtro = $this->Form->create('Filme', array('class' => 'form-row'));
 $filtro .= $this->Form->input('Filme.nome', array(
     'required' => false,
