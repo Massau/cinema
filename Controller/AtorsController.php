@@ -4,6 +4,8 @@ App::uses('AppController', 'Controller');
 class AtorsController extends AppController {
     
     public $layout = 'bootstrap';
+    public $helpers = array('Js' => array('Jquery'));
+    public $components = array('RequestHandler');
     
     public $paginate = array(
         'fields' => array('Ator.id', 'Ator.nome', 'Ator.nascimento'),

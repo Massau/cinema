@@ -20,9 +20,9 @@ $filtroBar = $this->Html->div('row my-3',
 //Formata, faz tradução para formato que tableCells entenda
 $detalhe = array();
 foreach($ators as $ator) {
-    $editLink = $this->Html->link('Alterar', '/ators/edit/' . $ator['Ator']['id']);
-    $deleteLink = $this->Html->link('Excluir', '/ators/delete/' . $ator['Ator']['id']);
-    $viewLink = $this->Html->link($ator['Ator']['nome'], '/ators/view/' . $ator['Ator']['id']);
+    $editLink = $this->Js->link('Alterar', '/ators/edit/' . $ator['Ator']['id'], array('update' => '#content'));
+    $deleteLink = $this->Js->link('Excluir', '/ators/delete/' . $ator['Ator']['id'], array('update' => '#content'));
+    $viewLink = $this->Js->link($ator['Ator']['nome'], '/ators/view/' . $ator['Ator']['id'], array('update' => '#content'));
     $detalhe[] = array(
         $viewLink,
         date('d/m/Y', strtotime($ator['Ator']['nascimento'])),

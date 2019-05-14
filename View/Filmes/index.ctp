@@ -25,9 +25,9 @@ $filtroBar = $this->Html->div('row my-3',
 
 $detalhe = array();
 foreach ($filmes as $filme) {
-    $editLink = $this->Html->link('Alterar', '/filmes/edit/' . $filme['Filme']['id']);
-    $deleteLink = $this->Html->link('Excluir', '/filmes/delete/' . $filme['Filme']['id']);
-    $viewLink = $this->Html->link($filme['Filme']['nome'], '/filmes/view/' . $filme['Filme']['id']);
+    $editLink = $this->Js->link('Alterar', '/filmes/edit/' . $filme['Filme']['id'], array('update' => '#content'));
+    $deleteLink = $this->Js->link('Excluir', '/filmes/delete/' . $filme['Filme']['id'], array('update' => '#content'));
+    $viewLink = $this->Js->link($filme['Filme']['nome'], '/filmes/view/' . $filme['Filme']['id'], array('update' => '#content'));
     $detalhe[] = array(
     $viewLink,
     $filme['Filme']['ano'],

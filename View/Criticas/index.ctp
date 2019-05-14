@@ -18,9 +18,9 @@ $filtroBar = $this->Html->div('row my-3',
 
 $detalhe = array();
 foreach($criticas as $critica) {
-    $editLink = $this->Html->link('Alterar', '/criticas/edit/' . $critica['Critica']['id']);
-    $deleteLink = $this->Html->link('Excluir', '/criticas/delete/' . $critica['Critica']['id']);
-    $viewLink = $this->Html->link($critica['Critica']['nome'], '/criticas/view/' . $critica['Critica']['id']);
+    $editLink = $this->Js->link('Alterar', '/criticas/edit/' . $critica['Critica']['id'], array('update' => '#content'));
+    $deleteLink = $this->Js->link('Excluir', '/criticas/delete/' . $critica['Critica']['id'], array('update' => '#content'));
+    $viewLink = $this->Js->link($critica['Critica']['nome'], '/criticas/view/' . $critica['Critica']['id'], array('update' => '#content'));
     $detalhe[] = array(
         $viewLink,
         $critica['Critica']['avaliacao'],

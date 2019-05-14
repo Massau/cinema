@@ -18,9 +18,9 @@ $filtroBar = $this->Html->div('row my-3',
 
 $detalhe = array();
 foreach($generos as $genero) {
-    $editLink = $this->Html->link('Alterar', '/generos/edit/' . $genero['Genero']['id']);
-    $deleteLink = $this->Html->link('Excluir', '/generos/delete/' . $genero['Genero']['id']);
-    $viewLink = $this->Html->link($genero['Genero']['nome'], '/generos/view/' . $genero['Genero']['id']);
+    $editLink = $this->Js->link('Alterar', '/generos/edit/' . $genero['Genero']['id'], array('update' => '#content'));
+    $deleteLink = $this->Js->link('Excluir', '/generos/delete/' . $genero['Genero']['id'], array('update' => '#content'));
+    $viewLink = $this->Js->link($genero['Genero']['nome'], '/generos/view/' . $genero['Genero']['id'], array('update', '#content'));
     $detalhe[] = array(
         $viewLink,
         $editLink . ' ' . $deleteLink
@@ -55,3 +55,4 @@ echo $this->Html->tag('h3', 'Generos');
 echo $filtroBar;
 echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginateBar;
+
