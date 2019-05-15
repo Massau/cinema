@@ -9,7 +9,7 @@ $filtro .= $this->Form->input('Ator.nome', array(
     'div' => false,
     'placeholder' => 'Nome'
 ));
-$filtro .= $this->Form->button('Filtrar', array('type' => 'submit', 'class' => 'btn btn-outline-warning mb-2'));
+$filtro .= $this->Js->submit('Filtrar', array('type' => 'submit', 'class' => 'btn btn-outline-warning mb-2', 'div' => false, 'update' => '#content'));
 $filtro .= $this->Form->end();
 
 $filtroBar = $this->Html->div('row my-3',
@@ -40,6 +40,7 @@ $CriticasIndex = $this->Html->link('Críticas', '/criticas');
 $FilmesIndex = $this->Html->link('Filmes', '/filmes');
 $GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
+$this->Paginator->options(array('update' => '#content'));
 $links = array(
     $this->Paginator->first('Primeira', array('class' => 'page-link')),
     $this->Paginator->prev('Anterior', array('class' => 'page-link')),
@@ -68,3 +69,6 @@ echo $this->Html->tag('h3', 'Atores');
 echo $filtroBar;
 echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginateBar;
+if ($this->request->is('ajax')) {
+    echo $this->writeBuffer();
+}

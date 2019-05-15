@@ -44,6 +44,7 @@ $AtorsIndex = $this->Html->link('Atores', '/ators');
 $CriticasIndex = $this->Html->link('Críticas', '/criticas');
 $GenerosIndex = $this->Html->link('Gêneros', '/generos');
 
+$this->Paginator->options(array('update' => '#content'));
 $links = array(
     $this->Paginator->first('Primeira', array('class' => 'page-link')),
     $this->Paginator->prev('Anterior', array('class' => 'page-link')),
@@ -64,3 +65,6 @@ echo $this->Html->tag('h3','Filmes');
 echo $filtroBar;
 echo $this->Html->tag('table', $header . $body, array('class' => 'table table-hover'));
 echo $paginateBar;
+if ($this->request->is('ajax')) {
+    echo $this->writeBuffer();
+}

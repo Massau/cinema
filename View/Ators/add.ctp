@@ -9,10 +9,15 @@ array(
     'required' => false,
     'type' => 'text',
 ));
+$form .= $this->Js->submit('Gravar', array('div' => false, 'update' => '#content'));
 $form .= $this->Form->end('Gravar');
 
-$voltarLink = $this->Html->link('Voltar', '/ators');
+$voltarLink = $this->Js->link('Voltar', '/ators''update' => '#content'));
 
 echo $this->Html->tag('h3', 'novo Ator');
 echo $form;
 echo $voltarLink;
+
+if ($this->request->is('ajax')) {
+    echo $this->writeBuffer();
+}
